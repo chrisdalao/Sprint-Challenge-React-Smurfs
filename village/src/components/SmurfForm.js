@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       smurf: {
+        id: uuid.v4(),
         name: '',
         age: '',
         height: ''
@@ -18,6 +20,7 @@ class SmurfForm extends Component {
     this.props.addSmurf(this.props, this.state.smurf)
     this.setState({
       smurf: {
+        id: this.state.id,
         name: '',
         age: '',
         height: ''
