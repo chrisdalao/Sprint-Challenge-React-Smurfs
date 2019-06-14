@@ -26,8 +26,8 @@ export class UpdateForm extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.submitSmurf}>
+            <div className="update-form">
+                <form className="update-form-submit" onSubmit={this.submitSmurf}>
                     <input
                         type='text'
                         onChange={this.handleInputChange}

@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+nav {
+  margin: 20px auto;
+  font-size: 1.5rem;
+}
+
+.nav-links a.active {
+  background-color: #0093ff;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+nav a {
+  margin: 20px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.smurf-form {
+  margin: auto;
+}
+
+.smurf-form-submit {
+  display: flex;
+  flex-flow: column;
+}
+
+.smurf-form-submit input {
+  margin: 10px auto;
+  height: 35px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border-style: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.smurf-form-submit button {
+  color: white;
+  background-color: #0093ff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.update-form {
+  margin: auto;
+}
+
+.update-form-submit {
+  display: flex;
+  flex-flow: column;
+}
+
+.update-form-submit input {
+  margin: 10px auto;
+  height: 35px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border-style: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.update-form-submit button {
+  color: white;
+  background-color: #0093ff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.smurfs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: column;
+}
+
+.smurfs ul {
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.smurf {
+  margin: 10px 20px;
+  box-shadow: 0px 5px 10px grey;
+  border-radius: 5px;
+  padding: 17px;
+  width: 25%;
+}
+
+.smurf-update-btn {
+  color: white;
+  background-color: #0093ff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.smurf-delete-btn {
+  color: white;
+  background-color: #ff6565;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: auto 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
