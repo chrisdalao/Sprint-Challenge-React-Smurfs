@@ -18,6 +18,7 @@ class Smurfs extends Component {
                 key={smurf.id}
                 smurf={smurf}
                 deleteSmurf={this.props.deleteSmurf}
+                setUpdateForm={this.props.setUpdateForm}
               />
             );
           })}

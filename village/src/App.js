@@ -4,12 +4,14 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 import axios from 'axios';
+import UpdateForm from './components/UpdateForm';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       smurfs: [],
+      activeSmurf: null
     };
   }
   // add any needed code to ensure that the smurfs collection exists on state and it has data coming from the server
@@ -27,14 +29,31 @@ class App extends Component {
       })
   }
 
-  addSmurf = (props, smurf) => {
+  addSmurf = smurf => {
     axios
       .post('http://localhost:3333/smurfs', smurf)
       .then(res => {
         this.setState({ smurfs: res.data })
-        props.history.push('/smurfs')
+        this.props.history.push('/smurfs')
       })
       .catch(err => { console.log(err) })
+  }
+
+  updateSmurf = smurf => {
+    axios
+      .put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+      .then(res => {
+        this.setState({ smurfs: res.data })
+        this.props.history.push('/smurfs')
+      })
+      .catch(err => { console.log(err) })
+  }
+
+  setUpdateForm = (e, smurf) => {
+    e.preventDefault();
+    this.setState({ activeSmurf: smurf }, () => {
+      this.props.history.push('/update-form')
+    })
   }
 
   deleteSmurf = (e, smurf) => {
@@ -73,7 +92,18 @@ class App extends Component {
             <Smurfs
               {...props}
               smurfs={this.state.smurfs}
+              setUpdateForm={this.setUpdateForm}
               deleteSmurf={this.deleteSmurf}
+            />
+          )}
+        />
+        <Route
+          path="/update-form"
+          render={(props) => (
+            <UpdateForm
+              {...props}
+              updateSmurf={this.updateSmurf}
+              activeSmurf={this.state.activeSmurf}
             />
           )}
         />
