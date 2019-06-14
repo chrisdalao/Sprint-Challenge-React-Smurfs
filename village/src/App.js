@@ -27,12 +27,12 @@ class App extends Component {
       })
   }
 
-  addSmurf = smurf => {
+  addSmurf = (props, smurf) => {
     axios
       .post('http://localhost:3333/smurfs', smurf)
       .then(res => {
         this.setState({ smurfs: res.data })
-        this.props.history.push('/smurfs')
+        props.history.push('/smurfs')
       })
       .catch(err => { console.log(err) })
   }
